@@ -1,11 +1,10 @@
-class MovieListView {
+class MovieDetailView {
     constructor(controller){
-        this.itemTemplate = document.getElementById("movie-info-template").innerHTML;
+        this.itemTemplate = document.getElementById("movie-detail-template").innerHTML;
         this.viewport = document.getElementById("viewport");
         this.viewport.addEventListener('click',(event) =>this.detailBtnClickListener(event));
         this.controller = controller;
     }
-
 
     detailBtnClickListener(event){
         
@@ -28,12 +27,12 @@ class MovieListView {
         return result;
     }    
 
-    render(templates) {  
-        for (let template of templates) {        
-            this.viewport.innerHTML += template;        
-        }
+    render(template) {  
+              
+            this.viewport.innerHTML = template;        
+        
     }
 }
 
 
-export default MovieListView;
+export default MovieDetailView;

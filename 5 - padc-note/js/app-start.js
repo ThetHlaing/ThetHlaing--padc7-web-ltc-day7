@@ -23,6 +23,7 @@
                 }
             });
             this.save(data);
+
         },    
         getAllNotes: function() {
             return JSON.parse(localStorage.notes);
@@ -73,7 +74,7 @@
             octopus.getNotes().forEach(function(note){
                 htmlStr += `<li class="note" data-content="${note.content}">
                 ${note.content}
-                <span class='note-date'>${Date(note.date)}</span>
+                <span class='note-date'>${new Date(note.date)}</span>
                 <span class='close'>x</span></li>`;
             });
             this.noteList.html( htmlStr );
